@@ -23,7 +23,7 @@ banner = """
                                         Fetch all Parameters from
                                         input, form ==> name & id
                                         a           ==> href parameter
-                                        scripts     ==> var & let & Json_Keys
+                                        scripts     ==> var & let & const & Json_Keys
                                         ---------------------
                                              Hashtag_AMIN :)
                                         """
@@ -136,6 +136,11 @@ def extract_script_tag(soup):
             if len(let_script) != 0:
                 for variable in let_script:
                     result.append(variable)
+        for script in scripts:
+            let_script = re.findall('const (\w+|\d+)', script.text)
+            if len(let_script) != 0:
+                for variable in let_script:
+                    result.append(variable)
         for result_script in result:
             params.append(result_script)
         params = list(set(params))
@@ -202,6 +207,7 @@ def fetch_param(soup):  # :)
                 if "@" in result_script:
                     if len(result_script) > 3:
                         result_all.append(result_script[1:])
+                        result_all.append(result_script)
                 elif len(result_script) > 3:
                         result_all.append(result_script)
     

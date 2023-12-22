@@ -5,7 +5,7 @@
 <h3> 👨‍💻 This tool can extract : </h3>
 
    * name & id from a & input tags 
-   * var & let variable from scripts tags 
+   * var & let & const variable from scripts tags 
    * Json keys from scripts tags 
    * href parameter from a tags
 
@@ -44,7 +44,7 @@ fetchParam.py -h
                                         Fetch all Parameters from
                                         input, form ==> name & id
                                         a           ==> href parameter
-                                        scripts     ==> var & let & Json_Keys
+                                        scripts     ==> var & let & const & Json_Keys
                                         ---------------------
                                              Hashtag_AMIN :)
 
